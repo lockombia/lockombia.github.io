@@ -1,0 +1,93 @@
+@import "tailwindcss";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+
+  scroll-behavior: smooth;
+}
+
+/* @media (min-width: 768px) {
+  body {
+    zoom: 1.5;
+    transform-origin: top left;
+  }
+} */
+
+* {
+  font-family: 'Bitcount';
+  font-size: 11.5px;
+  color: var(--color-primary-500)
+}
+
+@plugin 'flowbite/plugin';
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  --color-primary-50: #FFFAE6;
+  --color-primary-100: #FFF2B3;
+  --color-primary-200: #FFE680;
+  --color-primary-300: #FFD633;
+  --color-primary-400: #FFCC00;
+  --color-primary-500: #E6B800;
+  --color-primary-600: #CC9900;
+  --color-primary-700: #997300;
+  --color-primary-800: #665000;
+  --color-primary-900: #332800;
+
+
+  --color-secondary-50: #fdf3f9;
+  --color-secondary-100: #fae1f1;
+  --color-secondary-200: #f5bde0;
+  --color-secondary-300: #ee95cc;
+  --color-secondary-400: #e46cb8;
+  --color-secondary-500: #da5fab;
+  --color-secondary-600: #b34694;
+  --color-secondary-700: #8e3578;
+  --color-secondary-800: #6b275c;
+  --color-secondary-900: #501c46;
+}
+
+@theme {
+  --color-primary-50: var(--color-primary-50);
+  --color-primary-100: var(--color-primary-100);
+  --color-primary-200: var(--color-primary-200);
+  --color-primary-300: var(--color-primary-300);
+  --color-primary-400: var(--color-primary-400);
+  --color-primary-500: var(--color-primary-500);
+  --color-primary-600: var(--color-primary-600);
+  --color-primary-700: var(--color-primary-700);
+  --color-primary-800: var(--color-primary-800);
+  --color-primary-900: var(--color-primary-900);
+
+  --color-secondary-50: var(--color-secondary-50);
+  --color-secondary-100: var(--color-secondary-100);
+  --color-secondary-200: var(--color-secondary-200);
+  --color-secondary-300: var(--color-secondary-300);
+  --color-secondary-400: var(--color-secondary-400);
+  --color-secondary-500: var(--color-secondary-500);
+  --color-secondary-600: var(--color-secondary-600);
+  --color-secondary-700: var(--color-secondary-700);
+  --color-secondary-800: var(--color-secondary-800);
+  --color-secondary-900: var(--color-secondary-900);
+}
+
+@source "../node_modules/flowbite-svelte/dist";
+@source "../node_modules/flowbite-svelte-icons/dist";
+
+@layer base {
+
+  /* disable chrome cancel button */
+  input[type="search"]::-webkit-search-cancel-button {
+    display: none;
+  }
+}
+
+h1 {
+  text-align: center;
+  font-size: 2rem;
+
+}
