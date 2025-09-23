@@ -64,6 +64,12 @@
     <Handle type="target" position={Position.Left} />
     <Handle type="source" position={Position.Right} />
 
+    {#if $matches[i].items.length == 0}
+        <div class="player flex items-center justify-center">
+               
+        </div>
+    {/if}
+
     {#each $matches[i].items as item (item.id)}
         {@const k = playerIndex(item.player_id)}
 
@@ -82,8 +88,8 @@
 
 <style>
     .match {
-        min-height: 50px;
-        width: 200px;
+        min-height: 60px;
+        width: 250px;
         gap: 0; /* ensure no gap; overrides any utility classes if necessary */
     }
 
@@ -112,7 +118,7 @@
         justify-content: center;
         width: 100%;
         height: 100%;
-        font-size :medium;
+        font-size:x-large;
     }
 
     .winner {

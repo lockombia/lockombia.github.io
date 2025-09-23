@@ -1,11 +1,11 @@
 function matchPosition(depth, level, j, matchWidth, playerHeight) {
   const totalMatches = 2**(depth-1-level);
   const isOnLeft = j < totalMatches/2 ? -1 : 1;
-  const x = isOnLeft*(depth-level-1)*300;
+  const x = isOnLeft*(depth-level-1)*matchWidth;
   const y = level < depth - 1 ? (
     (j -(isOnLeft+1)/2*totalMatches/2) // recenter when you go to the matches on the right
-     - (2**(depth-2-level)-1)/2) * 2**(level+1) * playerHeight*1.6 // recenter and rescale according to the level
-     :0;
+     - (2**(depth-2-level)-1)/2) * 2**(level+1) * playerHeight*1.8 // recenter and rescale according to the level
+     : 0;
    return { x, y }
 }
 
@@ -13,7 +13,7 @@ export function nodesGenerator (depth, matches) {
   let nodes = [];
   for (let level = 0; level < depth; level++) {
     const playerHeight = 50;
-    const matchWidth = 300
+    const matchWidth = 300;
 
     for (let j = 2 ** (depth - 1 - level)-1; j >= 0; j+=-1) {
       const position = matchPosition(depth, level, j, matchWidth, playerHeight)

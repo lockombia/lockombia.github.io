@@ -32,7 +32,7 @@
                 <img
                     src="assets/banner.svg"
                     alt="Banner"
-                    class="h-24 object-contain cursor-pointer"
+                    class="h-20 object-contain cursor-pointer"
                 />
             </a>
         </div>
@@ -44,7 +44,7 @@
         >
             <Button href="{base}/">Inicio</Button>
             <Button href="{base}/live">Transmisión</Button>
-            <Button href="{base}/sevenToSmoke">7-To-Smoke</Button>
+            <Button href="{base}/locking">Locking</Button>
             <Button href="{base}/openStyle">Open Style</Button>
         </ButtonGroup>
         </div>

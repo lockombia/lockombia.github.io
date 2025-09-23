@@ -8,6 +8,8 @@
 
     $depth = 0;
 
+    let { collectionId = "" } = $props();
+
     const nodeTypes = { matchNode: MatchNode };
 
     let nodes = $derived(utils.nodesGenerator($depth, $matches));
@@ -16,6 +18,7 @@
 
     import { onMount, tick } from "svelte";
     import { loadGame } from "$lib/global";
+    import { collection } from "firebase/firestore";
 
     let svelteflow: any;
 
@@ -36,31 +39,63 @@
 
     onMount(() => {
         (async () => {
-            await loadGame();
+            await loadGame(collectionId);
             await clickFitViewButton();
         })();
 
-        const load_interval = setInterval(async () => {
-            await loadGame();
-        }, 5000);
-        const fitview_interval = setInterval(async () => {
-            await clickFitViewButton();
-        }, 2000);
+        let lastActivityTime = Date.now();
+        let fitViewInterval;
 
+        // Track user activity
+        const updateActivity = () => {
+            lastActivityTime = Date.now();
+        };
+
+        // Events to track for user activity
+        const activityEvents = [
+            "mousedown",
+            "mousemove",
+            "keypress",
+            "scroll",
+            "touchstart",
+            "click",
+        ];
+
+        // Add activity listeners
+        activityEvents.forEach((event) => {
+            document.addEventListener(event, updateActivity, true);
+        });
+
+        // Check every 1 second if user has been inactive for 5+ seconds
+        const checkInactivity = () => {
+            const now = Date.now();
+            const timeSinceActivity = now - lastActivityTime;
+            const fiveSecondsInMs = 5000;
+
+            // Only trigger fit view if user has been inactive for 5+ seconds
+            if (timeSinceActivity >= fiveSecondsInMs) {
+                clickFitViewButton();
+                // Reset timer so it doesn't trigger again immediately
+                lastActivityTime = now;
+            }
+        };
+
+        fitViewInterval = setInterval(checkInactivity, 1000);
+
+        // Cleanup function
         return () => {
-            clearInterval(load_interval);
-            clearInterval(fitview_interval);
+            clearInterval(fitViewInterval);
+            // Remove activity listeners
+            activityEvents.forEach((event) => {
+                document.removeEventListener(event, updateActivity, true);
+            });
         };
     });
 
     $inspect($matches);
 </script>
 
-<div>
-    {svelteflow?.width?.()}
-</div>
-
-<div style="width: 100%; height: 40vh">
+<div style="width: 100%; height: 80vh">
     <SvelteFlow
         bind:this={svelteflow}
         bind:nodes
@@ -78,6 +113,6 @@
         background: transparent !important;
     }
     :global(.svelte-flow__controls) {
-    display: none !important;
-  }
+        display: none !important;
+    }
 </style>

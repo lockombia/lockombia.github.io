@@ -17,7 +17,7 @@ html {
 } */
 
 * {
-  font-family: 'Bitcount';
+  font-family: 'Josefin Sans';
   font-size: 11.5px;
   color: var(--color-primary-500)
 }
@@ -88,6 +88,5 @@ html {
 
 h1 {
   text-align: center;
-  font-size: 2rem;
-
+  font-size: clamp(1rem, 3vw,2.5rem);
 }
