@@ -43,7 +43,6 @@
             class="*:mx-[0.4px] shadow-md *:ring-primary-700! *:rounded-t-none *:rounded-b-md *:border-0 *:border-primary-200 *:bg-black/50 *:divide-x *:hover:bg-black/10" 
         >
             <Button href="{base}/">Inicio</Button>
-            <Button href="{base}/live">Transmisión</Button>
             <Button href="{base}/locking">Locking</Button>
             <Button href="{base}/openStyle">Open Style</Button>
         </ButtonGroup>

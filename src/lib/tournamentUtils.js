@@ -12,8 +12,8 @@ function matchPosition(depth, level, j, matchWidth, playerHeight) {
 export function nodesGenerator (depth, matches) {
   let nodes = [];
   for (let level = 0; level < depth; level++) {
-    const playerHeight = 50;
-    const matchWidth = 300;
+    const playerHeight = 40;
+    const matchWidth = 250;
 
     for (let j = 2 ** (depth - 1 - level)-1; j >= 0; j+=-1) {
       const position = matchPosition(depth, level, j, matchWidth, playerHeight)

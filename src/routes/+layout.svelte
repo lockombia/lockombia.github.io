@@ -17,10 +17,10 @@
 			minWidth: 200.0,
 			scale: 1.0,
 			scaleMobile: 1.0,
-			color: 0x552800,
-			shininess: 24.0,
-			waveHeight: 8.5,
-			waveSpeed: 0.5,
+			color: 0x15233F,
+			shininess: 54.0,
+			waveHeight: 15.5,
+			waveSpeed: 0.7,
 			zoom: 1.35,
 		});
 

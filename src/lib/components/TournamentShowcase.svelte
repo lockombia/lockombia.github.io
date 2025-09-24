@@ -95,7 +95,7 @@
     $inspect($matches);
 </script>
 
-<div style="width: 100%; height: 80vh">
+<div style="width: 100%; height: 85vh">
     <SvelteFlow
         bind:this={svelteflow}
         bind:nodes

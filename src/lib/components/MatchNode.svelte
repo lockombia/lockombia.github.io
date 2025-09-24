@@ -89,7 +89,7 @@
 <style>
     .match {
         min-height: 60px;
-        width: 250px;
+        width: 200px;
         gap: 0; /* ensure no gap; overrides any utility classes if necessary */
     }
 
@@ -105,7 +105,6 @@
         width: 100%;
         height: var(--player-height);
         background-color: rgba(0, 0, 0, 0.5);
-
     }
 
     /* reset paragraph default margins and center vertically */
@@ -119,6 +118,7 @@
         width: 100%;
         height: 100%;
         font-size:x-large;
+        font-weight: bold;
     }
 
     .winner {
