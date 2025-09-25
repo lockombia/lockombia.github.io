@@ -10,18 +10,15 @@
 		// @ts-ignore
 		const effect = window.VANTA.WAVES({
 			el: vantaContainer,
-			mouseControls: false,
-			touchControls: false,
+			mouseControls: true,
+			touchControls: true,
 			gyroControls: false,
 			minHeight: 200.0,
 			minWidth: 200.0,
 			scale: 1.0,
 			scaleMobile: 1.0,
-			color: 0x15233F,
-			shininess: 54.0,
-			waveHeight: 15.5,
-			waveSpeed: 0.7,
-			zoom: 1.35,
+			color: 0x8c3800,
+			shininess: 1.0,
 		});
 
 		return () => effect?.destroy?.();

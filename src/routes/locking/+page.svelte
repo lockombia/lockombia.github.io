@@ -15,7 +15,7 @@
     <div
         class="flex w-[2000px] max-w-[30vw] h-20 mx-auto items-center justify-center mb-6 bg-black/50 shadow-md px-6 py-4 border-0 border-primary-200 rounded"
     >
-        <h1>Locking Top {2**$depth}</h1>
+        <h1>Locking {$depth > 0 ? `Top ${2 ** $depth}` : ""}</h1>
     </div>
 </div>
 

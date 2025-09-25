@@ -6,6 +6,7 @@
     import { players, matches } from "$lib/global";
     import { Item } from "$lib/types/Item";
     import { Match } from "$lib/types/Match";
+
     let { data }: NodeProps = $props();
     let dlevel = data.dlevel;
     let j = data.j;
@@ -49,6 +50,7 @@
             ? ""
             : "box-sizing: border-box; border: 1px dashed gray; background-color: lightgray",
     );
+    import { countryToEmoji } from "$lib/countryFlags";
 
     $effect(() => {
         if ($matches[i].id != id) {
@@ -65,24 +67,31 @@
     <Handle type="source" position={Position.Right} />
 
     {#if $matches[i].items.length == 0}
-        <div class="player flex items-center justify-center">
-               
-        </div>
+        <div class="player flex items-center justify-center"></div>
     {/if}
 
     {#each $matches[i].items as item (item.id)}
         {@const k = playerIndex(item.player_id)}
 
-        <!-- don't reuse "player" class on <p> and reset default margins -->
         {#if k + 1 != $matches[i].winner}
-            <div class="player flex items-center justify-center">
-                <p class="player-name text-center">{$players[k].name}</p>
-            </div>
-        {:else}
-            <div class="winner flex items-center justify-center">
-                <p class="player-name text-center">{$players[k].name}</p>
-            </div>
-        {/if}
+    <div class="player flex items-center justify-center relative">
+        <!-- vertical ruler -->
+        <div class="absolute left-0 top-0 h-full w-[10px] bg-[var(--color-primary-800)]"></div>
+
+        <p class="player-name text-center">
+            {countryToEmoji($players[k].info.country)} {$players[k].name}
+        </p>
+    </div>
+{:else}
+    <div class="winner flex items-center justify-center relative">
+        <!-- vertical ruler -->
+        <div class="absolute left-0 top-0 h-full w-[10px] bg-[var(--color-primary-500)]"></div>
+
+        <p class="player-name text-center">
+            {countryToEmoji($players[k].info.country)} {$players[k].name}
+        </p>
+    </div>
+{/if}
     {/each}
 </div>
 
@@ -117,7 +126,7 @@
         justify-content: center;
         width: 100%;
         height: 100%;
-        font-size:x-large;
+        font-size: x-large;
         font-weight: bold;
     }
 
@@ -130,7 +139,6 @@
         z-index: 1;
         width: 100%;
         height: var(--player-height);
-        background-color: var(--color-primary-800);
-        
+        background-color: rgba(0, 0, 0, 0.8);
     }
 </style>

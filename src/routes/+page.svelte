@@ -18,12 +18,12 @@
     <div class="w-[90vw] h-50 mx-auto items-center mb-6 px-1 py-1 rounded">
         {#if last_message}
             <div
-                class="bg-black/70 w-full h-[20%] rounded-t flex items-center justify-center px-4"
+                class="bg-neutral-900 w-full h-[20%] rounded-t flex items-center justify-center px-4"
             >
                 <h2 class="text-center font-bold">{last_message.subtitle}</h2>
             </div>
             <div
-                class="bg-black/50 w-full h-[80%] rounded-b flex items-center justify-center px-4"
+                class="bg-black/70 w-full h-[80%] rounded-b flex items-center justify-center px-4"
             >
                 <h1 class="text-center break-words hyphens-auto">
                     {last_message.title}
@@ -135,10 +135,10 @@
 <!-- Pricing Table -->
 <div class="w-full mt-1">
   <div class="w-[90vw] max-w-2xl mx-auto mb-6 px-4 py-4">
-    <div class="bg-black rounded-lg overflow-hidden shadow-lg">
+    <div class="bg-neutral-900 rounded-lg overflow-hidden shadow-lg">
       
       <!-- Workshop Internacional -->
-      <div class="flex items-center justify-between p-4 border-b border-gray-700">
+      <div class="flex items-center justify-between p-4 border-b border-neutral-700">
         <div class="flex items-center">
           <div class="w-0 h-0 border-l-[8px] border-l-yellow-400 border-t-[6px] border-t-transparent border-b-[6px] border-b-transparent mr-3"></div>
           <span class="text-white font-bold text-sm uppercase">WORKSHOP INTERNACIONAL</span>
@@ -147,7 +147,7 @@
       </div>
 
       <!-- Workshop Nacional -->
-      <div class="flex items-center justify-between p-4 border-b border-gray-700">
+      <div class="flex items-center justify-between p-4 border-b border-neutral-700">
         <div class="flex items-center">
           <div class="w-0 h-0 border-l-[8px] border-l-yellow-400 border-t-[6px] border-t-transparent border-b-[6px] border-b-transparent mr-3"></div>
           <span class="text-white font-bold text-sm uppercase">WORKSHOP NACIONAL</span>
@@ -156,7 +156,7 @@
       </div>
 
       <!-- 1 vs 1 Locking -->
-      <div class="flex items-center justify-between p-4 border-b border-gray-700">
+      <div class="flex items-center justify-between p-4 border-b border-neutral-700">
         <div class="flex items-center">
           <div class="w-0 h-0 border-l-[8px] border-l-yellow-400 border-t-[6px] border-t-transparent border-b-[6px] border-b-transparent mr-3"></div>
           <span class="text-white font-bold text-sm uppercase">1 VS 1 LOCKING</span>
@@ -165,7 +165,7 @@
       </div>
 
       <!-- 2 vs 2 Open Styles -->
-      <div class="flex items-center justify-between p-4 border-b border-gray-700">
+      <div class="flex items-center justify-between p-4 border-b border-neutral-700">
         <div class="flex items-center">
           <div class="w-0 h-0 border-l-[8px] border-l-yellow-400 border-t-[6px] border-t-transparent border-b-[6px] border-b-transparent mr-3"></div>
           <span class="text-white font-bold text-sm uppercase">2 VS 2 OPEN STYLES</span>
@@ -200,7 +200,7 @@
     <div class="bg-black rounded-lg overflow-hidden shadow-lg">
       
       <!-- Salsa -->
-      <div class="flex items-center justify-between p-4 border-b border-gray-700">
+      <div class="flex items-center justify-between p-4 border-b border-neutral-700 bg-neutral-900">
         <div class="flex items-center">
           <div class="w-0 h-0 border-l-[8px] border-l-yellow-400 border-t-[6px] border-t-transparent border-b-[6px] border-b-transparent mr-3"></div>
           <span class="text-white font-bold text-sm uppercase">SALSA — IVONNE PULIDO</span>
@@ -209,7 +209,7 @@
       </div>
 
       <!-- Locking -->
-      <div class="flex items-center justify-between p-4 border-b border-gray-700">
+      <div class="flex items-center justify-between p-4 border-b border-neutral-700 bg-neutral-800">
         <div class="flex items-center">
           <div class="w-0 h-0 border-l-[8px] border-l-yellow-400 border-t-[6px] border-t-transparent border-b-[6px] border-b-transparent mr-3"></div>
           <span class="text-white font-bold text-sm uppercase">LOCKING — FLOCKEY</span>
@@ -218,7 +218,7 @@
       </div>
 
       <!-- Almuerzo -->
-      <div class="flex items-center justify-between p-4 border-b border-gray-700">
+      <div class="flex items-center justify-between p-4 border-b border-neutral-700 bg-neutral-900">
         <div class="flex items-center">
           <div class="w-0 h-0 border-l-[8px] border-l-yellow-400 border-t-[6px] border-t-transparent border-b-[6px] border-b-transparent mr-3"></div>
           <span class="text-white font-bold text-sm uppercase">ALMUERZO</span>
@@ -227,7 +227,7 @@
       </div>
 
       <!-- Locking Coreográfico -->
-      <div class="flex items-center justify-between p-4 border-b border-gray-700">
+      <div class="flex items-center justify-between p-4 border-b border-neutral-700 bg-neutral-800">
         <div class="flex items-center">
           <div class="w-0 h-0 border-l-[8px] border-l-yellow-400 border-t-[6px] border-t-transparent border-b-[6px] border-b-transparent mr-3"></div>
           <span class="text-white font-bold text-sm uppercase">LOCKING COREOGRÁFICO — FUNKY D</span>
@@ -236,7 +236,7 @@
       </div>
 
       <!-- Taller Teórico -->
-      <div class="flex items-center justify-between p-4">
+      <div class="flex items-center justify-between p-4 bg-neutral-900">
         <div class="flex items-center">
           <div class="w-0 h-0 border-l-[8px] border-l-yellow-400 border-t-[6px] border-t-transparent border-b-[6px] border-b-transparent mr-3"></div>
           <span class="text-white font-bold text-sm uppercase">TALLER TEÓRICO — SCAYRA & PAULINA</span>
@@ -271,7 +271,7 @@
           </div>
           
           <!-- 1er lugar -->
-          <div class="bg-gray-900 px-4 py-3">
+          <div class="bg-neutral-900 px-4 py-3">
             <h3 class="text-center font-bold text-black text-base">1er lugar</h3>
             <div class="bg-black font-bold text-center py-2 px-4 rounded my-2">
               $500.000 MIL PESOS CO
@@ -285,7 +285,7 @@
           </div>
           
           <!-- 2do lugar -->
-          <div class="bg-gray-800 px-4 py-3 rounded-b">
+          <div class="bg-neutral-800 px-4 py-3 rounded-b">
             <h3 class="text-center font-bold text-black text-base">2do lugar</h3>
             <div class="bg-black text-yellow-400 font-bold text-center py-2 px-4 rounded my-2">
               $300.000 MIL PESOS CO
@@ -299,14 +299,14 @@
         </div>
 
         <!-- Column 2: 2 VS 2 OPEN STYLES -->
-        <div class="bg-black rounded" style="min-width: 300px; flex-shrink: 0; width: 50vw;">
+        <div class="bg-neutral-800 rounded" style="min-width: 300px; flex-shrink: 0; width: 50vw;">
           <!-- Title -->
           <div class="h-20 flex items-center justify-center px-4 bg-black rounded-t">
             <h2 class="text-center font-bold text-black text-lg">2 VS 2 OPEN STYLES</h2>
           </div>
           
           <!-- 1er lugar -->
-          <div class="bg-gray-900 px-4 py-3">
+          <div class="bg-neutral-900 px-4 py-3">
             <h3 class="text-center font-bold text-black text-base">1er lugar</h3>
             <div class="bg-black font-bold text-center py-2 px-4 rounded my-2">
               $500.000 MIL PESOS CO
@@ -320,7 +320,7 @@
           </div>
           
           <!-- 2do lugar -->
-          <div class="bg-gray-800 px-4 py-3 rounded-b">
+          <div class="bg-neutral-800 px-4 py-3 rounded-b">
             <h3 class="text-center font-bold text-black text-base">2do lugar</h3>
             <div class="bg-black font-bold text-center py-2 px-4 rounded my-2">
               $300.000 MIL PESOS CO
