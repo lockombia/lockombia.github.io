@@ -6,7 +6,7 @@
     import { EyeOutline, EyeSlashOutline } from "flowbite-svelte-icons";
 </script>
 
-<header class="sticky top-0 left-0 right-0 z-50 max-h-[25vh] h-32">
+<header class="sticky top-0 left-0 right-0 z-50 max-h-[25vh] h-52">
     <div
         class="flex justify-center items-center w-full h-full py-2 backdrop-blur-md bg-black/40 shadow-md"
     >
@@ -32,7 +32,7 @@
                 <img
                     src="assets/banner.svg"
                     alt="Banner"
-                    class="h-20 object-contain cursor-pointer"
+                    class="h-32 object-contain cursor-pointer"
                 />
             </a>
         </div>

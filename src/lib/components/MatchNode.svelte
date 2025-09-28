@@ -66,32 +66,60 @@
     <Handle type="target" position={Position.Left} />
     <Handle type="source" position={Position.Right} />
 
+    {#if dlevel === 0}
+        <div
+            class="title"
+        >
+            <p style="font-weight:bold;font-size:1.8rem;text-align:center;">
+                Final
+            </p>
+        </div>
+    {/if}
+
+    {#if dlevel === 1}
+        <div
+            class="title"
+        >
+            <p style="font-weight:bold;font-size:1.8rem;text-align:center;">
+                Semifinal
+            </p>
+        </div>
+    {/if}
+
     {#if $matches[i].items.length == 0}
         <div class="player flex items-center justify-center"></div>
     {/if}
+
+    
 
     {#each $matches[i].items as item (item.id)}
         {@const k = playerIndex(item.player_id)}
 
         {#if k + 1 != $matches[i].winner}
-    <div class="player flex items-center justify-center relative">
-        <!-- vertical ruler -->
-        <div class="absolute left-0 top-0 h-full w-[10px] bg-[var(--color-primary-800)]"></div>
+            <div class="player flex items-center justify-center relative">
+                <!-- vertical ruler -->
+                <div
+                    class="absolute left-0 top-0 h-full w-[10px] bg-[var(--color-primary-800)]"
+                ></div>
 
-        <p class="player-name text-center">
-            {countryToEmoji($players[k].info.country)} {$players[k].name}
-        </p>
-    </div>
-{:else}
-    <div class="winner flex items-center justify-center relative">
-        <!-- vertical ruler -->
-        <div class="absolute left-0 top-0 h-full w-[10px] bg-[var(--color-primary-500)]"></div>
+                <p class="player-name text-center">
+                    {countryToEmoji($players[k].info.country)}
+                    {$players[k].name}
+                </p>
+            </div>
+        {:else}
+            <div class="winner flex items-center justify-center relative">
+                <!-- vertical ruler -->
+                <div
+                    class="absolute left-0 top-0 h-full w-[10px] bg-[var(--color-primary-500)]"
+                ></div>
 
-        <p class="player-name text-center">
-            {countryToEmoji($players[k].info.country)} {$players[k].name}
-        </p>
-    </div>
-{/if}
+                <p class="player-name text-center">
+                    {countryToEmoji($players[k].info.country)}
+                    {$players[k].name}
+                </p>
+            </div>
+        {/if}
     {/each}
 </div>
 
@@ -114,6 +142,19 @@
         width: 100%;
         height: var(--player-height);
         background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    .title {
+        /* choose one border style — avoid double borders */
+        border-bottom: 1px solid black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        z-index: 1;
+        width: 100%;
+        height: 25px;
+        background-color: rgba(0, 0, 0, 0.8);
     }
 
     /* reset paragraph default margins and center vertically */

@@ -18,7 +18,8 @@
 			scale: 1.0,
 			scaleMobile: 1.0,
 			color: 0x8c3800,
-			shininess: 1.0,
+			shininess: 1.5,
+			waveHeight: 15.00,
 		});
 
 		return () => effect?.destroy?.();
